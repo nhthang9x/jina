@@ -110,8 +110,8 @@ jobs:
       - run: |
           sudo apt-get update -y
           sudo apt-get install python3.7 git python3-distutils python3-pip -y
-          pip install gitpython ruamel.yaml PyGithub semver
-          git clone git@github.com:jina-ai/jina-hub.git --depth=1
+          pip3 install gitpython ruamel.yaml PyGithub semver
+          git clone --depth=1 https://$DEV_BOT_TOKEN@github.com/jina-ai/jina-hub.git
           output=$(python3.7 scripts/jina-hub-update.py)
           output="${output//'%'/'%25'}"
           output="${output//$'\n'/'%0A'}"
